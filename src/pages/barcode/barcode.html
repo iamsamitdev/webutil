@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Barcode</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card>
+    <ion-card-content>
+      <ion-list>
+        <div ion-item *ngFor="let item of data">
+          <a href="{{item}}">{{item}}</a>
+        </div>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+<ion-footer padding>
+  <ion-toolbar position="bottom">
+    <button ion-button block outline color="primary" (click)="scan()">Scan</button>
+  </ion-toolbar>
+</ion-footer>

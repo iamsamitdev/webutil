@@ -1,17 +1,27 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <ion-title>Image</ion-title>
   </ion-navbar>
-</ion-header>
-
-<ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
-</ion-content>
+ </ion-header>
+ 
+ <ion-content>
+ 
+  <ion-grid>
+    <ion-row>
+      <ion-col col-12>
+        <img src="{{pathForImage(lastImage)}}" style="width: 100%" [hidden]="lastImage === null">
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+ </ion-content>
+ 
+ <ion-footer padding text-center>
+ 
+    <button ion-button icon-left (click)="presentActionSheet()">
+      <ion-icon name="camera"></ion-icon>Select Image
+    </button>
+ 
+    <button ion-button icon-left (click)="uploadImage()" [disabled]="lastImage === null">
+      <ion-icon name="cloud-upload"></ion-icon>Upload
+    </button>
+ </ion-footer> 
